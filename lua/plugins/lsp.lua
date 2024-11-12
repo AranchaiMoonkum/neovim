@@ -42,7 +42,8 @@ return {
                 "jsonls",
                 "dockerls",
                 "yamlls",
-                "java_language_server",
+                -- "java_language_server",
+                "jdtls",
                 "pyright",
             },
             handlers = {
