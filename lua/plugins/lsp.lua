@@ -3,6 +3,7 @@ return {
   dependencies = {
     "mason-org/mason.nvim",
     "neovim/nvim-lspconfig",
+    "saghen/blink.cmp",
   },
   config = function()
     vim.diagnostic.config({ virtual_text = true })
@@ -18,13 +19,6 @@ return {
     end)
 
     vim.keymap.set("n", "<leader>fm", vim.lsp.buf.format)
-    vim.keymap.set("i", "<C-n>", function()
-      return vim.fn.pumvisible() == 1 and "<C-n>" or "<C-x><C-o>"
-    end, { expr = true })
-
-    vim.keymap.set("i", "<C-p>", function()
-      return vim.fn.pumvisible() == 1 and "<C-p>" or "<C-x><C-o>"
-    end, { expr = true })
 
     vim.api.nvim_create_autocmd("LspAttach", {
       callback = function(args)
@@ -33,8 +27,11 @@ return {
       end,
     })
 
+    local capabilities = require("blink.cmp").get_lsp_capabilities()
+
     require("mason").setup()
     require("mason-lspconfig").setup({
+      automatic_enable = true,
       ensure_installed = {
         "lua_ls",
         "angularls",
@@ -45,7 +42,13 @@ return {
         "jsonls",
         "marksman",
       },
-      automatic_enable = true,
+      handlers = {
+        function(server_name)
+          require("lspconfig")[server_name].setup {
+            capabilities = capabilities
+          }
+        end,
+      },
     })
   end,
 }
