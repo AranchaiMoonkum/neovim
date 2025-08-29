@@ -25,12 +25,6 @@ vim.opt.termguicolors = true
 vim.opt.guicursor = "n-v-c:block"
 vim.opt.fillchars = { eob = " " }
 
--- vim.opt.list = true
--- vim.opt.listchars = {
---   space = "·",
---   tab = "··",
--- }
-
 vim.schedule(function()
   vim.o.clipboard = "unnamedplus"
 end)
