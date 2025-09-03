@@ -17,6 +17,7 @@ return {
         "ts_ls",
         "jsonls",
         "marksman",
+        "biome",
       },
     })
   end,
