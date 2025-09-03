@@ -10,8 +10,6 @@ vim.keymap.set("n", "K", function()
   end
 end)
 
-vim.keymap.set("n", "<leader>fm", vim.lsp.buf.format)
-
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = args.buf })
