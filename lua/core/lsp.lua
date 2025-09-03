@@ -11,7 +11,12 @@ vim.keymap.set("n", "K", function()
 	else
 		vim.lsp.buf.hover()
 	end
-end, { desc = "Hover or show diagnostics" })
+end)
+
+-- LSP Rename
+vim.keymap.set("n", "<leader>rn", function()
+	vim.lsp.buf.rename()
+end)
 
 -- Attach LSP keymaps once per buffer
 vim.api.nvim_create_autocmd("LspAttach", {
