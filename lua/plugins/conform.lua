@@ -8,6 +8,7 @@ return {
 				python = { "ruff", "black" },
 				javascript = { "prettier", "biome" },
 				typescript = { "prettier", "biome" },
+				go = { "goimports-reviser" },
 			},
 		})
 
