@@ -2,7 +2,7 @@ return {
 	{
 		"rose-pine/neovim",
 		name = "rose-pine",
-		lazy = true,
+		lazy = false,
 		priority = 1000,
 		opts = {
 			variant = "moon",
@@ -113,10 +113,10 @@ return {
 	},
 	{
 		"vague2k/vague.nvim",
-		lazy = false,
+		lazy = true,
 		priority = 1000,
 		opts = {
-			transparent = true,
+			transparent = false,
 			style = {
 				-- "none" is the same thing as default. But "italic" and "bold" are also valid options
 				boolean = "none",
