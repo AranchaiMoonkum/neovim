@@ -2,7 +2,7 @@ return {
 	{
 		"rose-pine/neovim",
 		name = "rose-pine",
-		lazy = false,
+		lazy = true,
 		priority = 1000,
 		opts = {
 			variant = "moon",
@@ -149,6 +149,49 @@ return {
 			require("vague").setup(opts)
 
 			vim.cmd("colorscheme vague")
+		end,
+	},
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		priority = 1000,
+		lazy = false,
+		opts = {
+			color_overrides = {
+				mocha = {
+					rosewater = "#ffffff",
+					flamingo = "#ffffff",
+					red = "#ffdd33",
+					maroon = "#ffffff",
+					pink = "#ffdd33",
+					mauve = "#ffdd33",
+					peach = "#96a6c8",
+					yellow = "#899b92",
+					green = "#73c936",
+					teal = "#88b992",
+					sky = "#cc8c3c",
+					sapphire = "#96a6c8",
+					blue = "#778899",
+					lavender = "#778899",
+					text = "#eae3d5",
+					subtext1 = "#d5c9b7",
+					subtext0 = "#bfb3a5",
+					overlay2 = "#aca195",
+					overlay1 = "#958b7e",
+					overlay0 = "#6f6660",
+					surface2 = "#585858",
+					surface1 = "#4b4b4b",
+					surface0 = "#353535",
+					base = "#181818",
+					mantle = "#1d2021",
+					crust = "#1d2021",
+				},
+			},
+		},
+		config = function(_, opts)
+			require("catppuccin").setup(opts)
+
+      vim.cmd("colorscheme catppuccin-mocha")
 		end,
 	},
 }
