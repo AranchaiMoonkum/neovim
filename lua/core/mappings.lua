@@ -6,4 +6,9 @@ vim.keymap.set("n", "yc", "yygccp", { remap = true }) -- mini version control
 vim.keymap.set("v", "<leader>C", "ygvgc`>p", { remap = true }) -- mini version control but in visual mode
 vim.keymap.set("n", "<leader>fm", vim.lsp.buf.format) -- format code
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action) -- code action
-vim.keymap.set("n", "<leader>e", "<cmd>Ex<cr>")
+vim.keymap.set("n", "<leader>e", "<cmd>Ex<cr>") -- open explorer
+vim.keymap.set("n", "te", "<cmd>tabnew<cr>") -- open new tab
+vim.keymap.set("n", "tn", "<cmd>tabnext<cr>") -- next tab
+vim.keymap.set("n", "tp", "<cmd>tabprevious<cr>") -- previous tab
+vim.keymap.set("n", "td", "<cmd>tabclose<cr>") -- close tab
+vim.keymap.set("n", "to", "<cmd>tabonly<cr>") -- close all tabs except the current one

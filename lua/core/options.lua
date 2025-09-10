@@ -19,6 +19,7 @@ vim.opt.expandtab = true
 vim.opt.swapfile = false
 vim.opt.incsearch = true
 vim.opt.laststatus = 3
+vim.opt.showtabline = 2
 vim.opt.statusline = " %f %m %= %l,%c          %P "
 vim.opt.wrap = false
 vim.opt.termguicolors = true
